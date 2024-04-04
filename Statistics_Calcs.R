@@ -11,7 +11,7 @@ library(jtools)
 library(dplyr)
 
 
-setwd("D:/Dissertation")
+setwd("D:/Dissertation/R Files")
 
 my_data <- read_csv('RdataImport_ENGR151.csv')
 
@@ -48,7 +48,7 @@ muSD_cGPA <- 0.92
 
 priors_cGPA <- list(muM = muM_cGPA, muSD = muSD_cGPA)
 
-BESTcGPA <- BESTmcmc(Exp_cGPA, Con_cGPA, priors=priors_cGPA, parallel=FALSE)
+BESTcGPA <- BESTmcmc(Exp_cGPA, Con_cGPA, priors=NULL, parallel=FALSE)
 
 plot(BESTcGPA)
 plotAll(BESTcGPA)
@@ -61,7 +61,7 @@ muSD_hGPA <- 0.46
 
 priors_hGPA <- list(muM = muM_hGPA, muSD = muSD_hGPA)
 
-BESThGPA <- BESTmcmc(Exp_hGPA, Con_hGPA, priors=priors_hGPA, parallel=FALSE)
+BESThGPA <- BESTmcmc(Exp_hGPA, Con_hGPA, priors=NULL, parallel=FALSE)
 
 plot(BESThGPA)
 plotAll(BESThGPA)
@@ -74,7 +74,7 @@ muSD_SAT <- 40
 
 priors_SAT <- list(muM = muM_SAT, muSD = muSD_SAT)
 
-BESTSAT <- BESTmcmc(Exp_SAT, Con_SAT, priors=priors_SAT, parallel=FALSE)
+BESTSAT <- BESTmcmc(Exp_SAT, Con_SAT, priors=NULL, parallel=FALSE)
 
 plot(BESTSAT)
 plotAll(BESTSAT)
@@ -87,7 +87,7 @@ muSD_ACT <- 1
 
 priors_ACT <- list(muM = muM_ACT, muSD = muSD_ACT)
 
-BESTACT <- BESTmcmc(Exp_ACT, Con_ACT, priors=priors_ACT, parallel=FALSE)
+BESTACT <- BESTmcmc(Exp_ACT, Con_ACT, priors=NULL, parallel=FALSE)
 
 plot(BESTACT)
 plotAll(BESTACT)
@@ -100,8 +100,8 @@ muSD_CAT <- 5
 
 priors_CAT <- list(muM = muM_CAT, muSD = muSD_CAT)
 
-BESTCAT <- BESTmcmc(Post_CAT, Pre_CAT, priors=priors_CAT, parallel=FALSE)
-BESTCATD <- BESTmcmc(Delta_CAT, priors=priors_CAT, parallel=FALSE)
+BESTCAT <- BESTmcmc(Post_CAT, Pre_CAT, priors=NULL, parallel=FALSE)
+BESTCATD <- BESTmcmc(Delta_CAT, priors=NULL, parallel=FALSE)
 
 plot(BESTCAT)
 plotAll(BESTCAT)
